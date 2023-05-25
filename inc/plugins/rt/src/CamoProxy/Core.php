@@ -107,7 +107,7 @@ class Core
                 ],
                 "key" => [
                     "title" => "Camo Private key",
-                    "description" => "Enter a private key so we can cache generate secure hashed values for proxy images",
+                    "description" => "Enter a random string so we can generate secure hashed values for proxied images",
                     "optionscode" => "text",
                     "value" => ""
                 ],
