@@ -1,5 +1,5 @@
 ## RT Camo Proxy
-Camouflage images inside posts and prevent 3rd-party image hosting obtaining visitors IP addresses. Instead your server will get image and serve it directly (and ask browser to cache it).
+is a plugin which camouflages images inside posts and prevent 3rd-party image hosting obtaining visitors IP addresses. Instead your server will get image and serve it directly (and ask browser to cache it).
 
 ### Table of contents
 1. [❗ Dependencies](#-dependencies)
