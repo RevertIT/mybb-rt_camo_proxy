@@ -27,7 +27,6 @@ final class Frontend
      */
     public function parse_message_end(&$message): void
     {
-
         if (Core::is_enabled() && Core::is_allowed_to_use())
         {
             $find_images = \rt\CamoProxy\extractImageUrls($message);
@@ -68,14 +67,7 @@ final class Frontend
                 if (!empty($decoded_image))
                 {
                     $camo = new Camo($decoded_image);
-
-                    try
-                    {
-                        $camo->showImage();
-                    }
-                    catch (Exception $e)
-                    {
-                    }
+                    $camo->showImage();
                 }
             }
         }
