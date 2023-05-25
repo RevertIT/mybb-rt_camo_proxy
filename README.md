@@ -45,4 +45,4 @@ Open a new question by [clicking here](https://github.com/RevertIT/mybb-rt_camo_
 Open a new bug report by [clicking here](https://github.com/RevertIT/mybb-rt_camo_proxy/issues/new)
 
 ### 📷 Preview
-Changes original image eg: `mydomain.com/image.png` to `myforumdomain.com/misc.php?action=rt_camo&digest=privatekey&image=hashedimage`
+Changes original image eg: `somedomain.com/image.png` to `myforumdomain.com/misc.php?action=rt_camo&digest=privatekey&image=hashedimage`
