@@ -21,7 +21,7 @@ class Core
         'description' => 'Camouflage images inside posts and prevent 3rd-party image hosting obtaining visitors IP addresses, instead your server will get image and serve it directly (and ask browser to cache it)',
         'author' => 'RevertIT',
         'authorsite' => 'https://github.com/RevertIT/',
-        'version' => '1.0',
+        'version' => '1.1',
         'compatibility' => '18*',
         'codename' => 'rt_camo_proxy',
         'prefix' => 'rt_camo_proxy',
@@ -116,6 +116,18 @@ class Core
                     "description" => "Which usergroups are allowed to use this feature?",
                     "optionscode" => "groupselect",
                     "value" => "-1"
+                ],
+                "default_image" => [
+                    "title" => "Default Not-found image",
+                    "description" => "You should use a absolute path to the image (eg. " . MYBB_ROOT . "images/not_found_image.png" . ")",
+                    "optionscode" => "text",
+                    "value" => MYBB_ROOT . "images/spinner_big.gif",
+                ],
+                "cache_time" => [
+                    "title" => "Browser Cache Time (in hours)",
+                    "description" => "How long should the browser cache the image for? (Prevents using additional resources)",
+                    "optionscode" => "numeric",
+                    "value" => "4"
                 ]
             ],
         );

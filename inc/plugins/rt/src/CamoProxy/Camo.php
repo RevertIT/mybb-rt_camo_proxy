@@ -84,21 +84,20 @@ class Camo
      */
     public function showImage(int $cache_for = 4): void
     {
-
-        // Check if everything is fine
-        if (!$this->isValidUrl() || !$this->isValidMime())
-        {
-            header("Content-Type: image/gif");
-            echo file_get_contents(MYBB_ROOT . '/images/spinner_big.gif');
-            die;
-        }
-
         // Set the cache control header
         $cache_time = 60 * 60 * $cache_for;
         header("Cache-Control: public, max-age={$cache_time}");
 
         $expires = new DateTimeImmutable('now +4 hours', new DateTimeZone('GMT'));
         header('Expires: ' . $expires->format('D, d M Y H:i:s') . ' GMT');
+
+        // Check if everything is fine
+        if (!$this->isValidUrl() || !$this->isValidMime())
+        {
+            header("Content-Type: image/gif");
+            echo file_get_contents($this->mybb->settings['rt_camo_proxy_default_image']);
+            die;
+        }
 
         header("Content-Type: {$this->getImageMimeType()}");
 
@@ -158,7 +157,7 @@ class Camo
 
         if (!$imageData)
         {
-            throw new Exception(file_get_contents(MYBB_ROOT . '/images/spinner_big.gif'));
+            throw new Exception(file_get_contents($this->mybb->settings['rt_camo_proxy_default_image']));
         }
 
         return $imageData;

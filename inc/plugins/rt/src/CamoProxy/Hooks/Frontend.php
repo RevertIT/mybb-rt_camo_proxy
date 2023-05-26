@@ -67,7 +67,7 @@ final class Frontend
                 if (!empty($decoded_image))
                 {
                     $camo = new Camo($decoded_image);
-                    $camo->showImage();
+                    $camo->showImage((int) $mybb->settings['rt_camo_proxy_cache_time']);
                 }
             }
         }

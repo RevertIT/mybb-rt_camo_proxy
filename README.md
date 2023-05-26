@@ -18,9 +18,11 @@ is a plugin which camouflages images inside posts and prevent 3rd-party image ho
 - PHP >= 7.4 (preferred 8.0 and up)
 
 ### 📃 Features
-* Camouflage images to prevent ip-address sniffing on users from 3rd-party hostings.
+* Fix unsecure (http://) images to be proxied by your domain.
+* Camouflage images to prevent ip-address sniffing on users from 3rd-party sites.
 * Set which usersgroups can use this feature
-* Once image is set, it will ask browser to cache it for several hours
+* Set cache time for browsers to cache image
+* Set default "Not found" image when we can't load an image
 
 ### ➕ Installation
 1. Copy the directories from the plugin inside your root MyBB installation.
