@@ -279,21 +279,3 @@ function RFC3986_urlencode($string): string
 
     return str_replace($entities, $replacements, urlencode($string));
 }
-
-/**
- * @param string $data
- * @return string
- */
-function base64url_encode(string $data): string
-{
-    return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
-}
-
-/**
- * @param string $data
- * @return false|string
- */
-function base64url_decode(string $data)
-{
-    return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));
-}

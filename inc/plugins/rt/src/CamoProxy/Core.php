@@ -21,7 +21,7 @@ class Core
         'description' => 'Camouflage images inside posts and prevent 3rd-party image hosting obtaining visitors IP addresses, instead your server will get image and serve it directly (and ask browser to cache it)',
         'author' => 'RevertIT',
         'authorsite' => 'https://github.com/RevertIT/',
-        'version' => '1.1',
+        'version' => '1.2',
         'compatibility' => '18*',
         'codename' => 'rt_camo_proxy',
         'prefix' => 'rt_camo_proxy',

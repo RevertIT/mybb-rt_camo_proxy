@@ -62,7 +62,7 @@ final class Frontend
             {
                 $image = $mybb->get_input('image');
 
-                $decoded_image = \rt\CamoProxy\base64url_decode(urldecode($image));
+                $decoded_image = hex2bin(urldecode($image));
 
                 if (!empty($decoded_image))
                 {

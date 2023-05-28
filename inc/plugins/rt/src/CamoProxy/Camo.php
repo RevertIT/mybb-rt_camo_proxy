@@ -38,7 +38,7 @@ class Camo
         $this->camoProxyKey = $mybb->settings['rt_camo_proxy_key'];
 
         $this->digest = hash_hmac('sha256', $this->camoProxyUrl, $this->camoProxyKey);
-        $this->camoImageUrl = \rt\CamoProxy\base64url_encode(RFC3986_urlencode($imageUrl));
+        $this->camoImageUrl = bin2hex(RFC3986_urlencode($imageUrl));
     }
 
     /**
