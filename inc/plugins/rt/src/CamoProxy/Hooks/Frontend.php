@@ -27,6 +27,8 @@ final class Frontend
      */
     public function parse_message_end(&$message): void
     {
+        global $mybb;
+
         if (Core::is_enabled() && Core::is_allowed_to_use())
         {
             $find_images = \rt\CamoProxy\extractImageUrls($message);
@@ -36,9 +38,12 @@ final class Frontend
                 $images = $urls = [];
                 foreach ($find_images as $i)
                 {
-                    $camo = new Camo($i);
-                    $images[] = $i;
-                    $urls[] = $camo->getProxiedImageUrl();
+                    if (isset($mybb->settings['rt_camo_proxy_url']) && strpos($i, $mybb->settings['rt_camo_proxy_url']) === false)
+                    {
+                        $camo = new Camo($i);
+                        $images[] = $i;
+                        $urls[] = $camo->getProxiedImageUrl();
+                    }
                 }
 
                 // Replace images in message
