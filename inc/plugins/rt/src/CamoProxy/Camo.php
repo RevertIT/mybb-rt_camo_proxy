@@ -88,7 +88,7 @@ class Camo
         $cache_time = 60 * 60 * $cache_for;
         header("Cache-Control: public, max-age={$cache_time}");
 
-        $expires = new DateTimeImmutable('now +4 hours', new DateTimeZone('GMT'));
+        $expires = new DateTimeImmutable("now +{$cache_for} hours", new DateTimeZone('GMT'));
         header('Expires: ' . $expires->format('D, d M Y H:i:s') . ' GMT');
 
         // Check if everything is fine
